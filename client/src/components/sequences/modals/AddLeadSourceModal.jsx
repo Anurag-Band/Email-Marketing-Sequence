@@ -68,7 +68,7 @@ export default function AddLeadSourceModal({
                             setAddLeadSourceModalOpen(false);
                             setLeadsFromListModalOpen(true);
                           }}
-                          className="flex items-center gap-5 bg-white rounded-md p-4 border border-slate-300 w-1/2 cursor-pointer hover:bg-gray-200 transition duration-200 ease-in-out h-26"
+                          className="flex items-center gap-5 bg-white rounded-md p-4 border border-slate-300 h-26 w-1/2 cursor-pointer hover:bg-gray-200 transition duration-200 ease-in-out h-26"
                         >
                           <div className="flex items-center justify-center p-3 border border-pink-500 bg-pink-200 rounded-md">
                             <GoPersonAdd className="text-2xl font-bold text-pink-600" />
@@ -85,7 +85,7 @@ export default function AddLeadSourceModal({
                         </div>
 
                         {/* box */}
-                        <div className="flex items-center gap-5 bg-white rounded-md p-4 border border-slate-300 w-1/2 cursor-pointer hover:bg-gray-200 transition duration-200 ease-in-out h-26">
+                        <div className="flex items-center gap-5 bg-white rounded-md p-4 border border-slate-300 h-26 w-1/2 cursor-pointer hover:bg-gray-200 transition duration-200 ease-in-out h-26">
                           <div className="flex items-center justify-center p-3 border border-pink-500 bg-pink-200 rounded-md">
                             <BsFillPersonCheckFill className="text-2xl font-bold text-pink-600" />
                           </div>
@@ -103,7 +103,7 @@ export default function AddLeadSourceModal({
 
                       <div className="flex items-center gap-5">
                         {/* box */}
-                        <div className="flex items-center gap-5 bg-white rounded-md p-4 border border-slate-300 w-1/2 cursor-pointer hover:bg-gray-200 transition duration-200 ease-in-out h-26">
+                        <div className="flex items-center gap-5 bg-white rounded-md p-4 border border-slate-300 h-26 w-1/2 cursor-pointer hover:bg-gray-200 transition duration-200 ease-in-out h-26">
                           <div className="flex items-center justify-center p-3 border border-pink-500 bg-pink-200 rounded-md">
                             <AiOutlineUsergroupAdd className="text-2xl font-bold text-pink-600" />
                           </div>
@@ -119,7 +119,7 @@ export default function AddLeadSourceModal({
                         </div>
 
                         {/* box */}
-                        <div className="flex items-center gap-5 bg-white rounded-md p-4 border border-slate-300 w-1/2 cursor-pointer hover:bg-gray-200 transition duration-200 ease-in-out h-26">
+                        <div className="flex items-center gap-5 bg-white rounded-md p-4 border border-slate-300 h-28 w-1/2 cursor-pointer hover:bg-gray-200 transition duration-200 ease-in-out h-26">
                           <div className="flex items-center justify-center p-3 border border-pink-500 bg-pink-200 rounded-md">
                             <HiOutlineLightningBolt className="text-2xl font-bold text-pink-600" />
                           </div>

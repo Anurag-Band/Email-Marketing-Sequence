@@ -3,10 +3,12 @@ import { MdClose } from "react-icons/md";
 import { Handle, Position } from "reactflow";
 import AddBlockModal from "./modals/AddBlockModal";
 import ColdEmailModal from "./modals/ColdEmailModal";
+import WaitModal from "./modals/WaitModal";
 
 const AddBlock = () => {
   const [isAddBlockModalOpen, setAddBlockModalOpen] = useState(false);
   const [isColdEmailModalOpen, setColdEmailModalOpen] = useState(false);
+  const [isWaitModalOpen, setWaitModalOpen] = useState(false);
 
   return (
     <div className="w-52 flex items-center justify-center">
@@ -23,12 +25,19 @@ const AddBlock = () => {
           isAddBlockModalOpen={isAddBlockModalOpen}
           setAddBlockModalOpen={setAddBlockModalOpen}
           setColdEmailModalOpen={setColdEmailModalOpen}
+          setWaitModalOpen={setWaitModalOpen}
         />
       )}
       {isColdEmailModalOpen && (
         <ColdEmailModal
           isColdEmailModalOpen={isColdEmailModalOpen}
           setColdEmailModalOpen={setColdEmailModalOpen}
+        />
+      )}
+      {isWaitModalOpen && (
+        <WaitModal
+          isWaitModalOpen={isWaitModalOpen}
+          setWaitModalOpen={setWaitModalOpen}
         />
       )}
     </div>
