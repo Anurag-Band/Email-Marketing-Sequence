@@ -10,12 +10,28 @@ import { FiPlusCircle } from "react-icons/fi";
 import { MdClose } from "react-icons/md";
 
 import Select from "react-select";
+import { useReactFlow } from "reactflow";
 
 export default function LeadsfromListModal({
   isLeadsFromListModalOpen,
   setLeadsFromListModalOpen,
 }) {
   const [selectedLists, setSelectedLists] = useState([]);
+  const reactFlow = useReactFlow();
+  console.log(reactFlow);
+  const onProviderClick = (selectedLists) => {
+    reactFlow.setNodes((prevNodes) =>
+      prevNodes.concat([
+        {
+          id: (prevNodes.length + 1).toString(),
+          data: selectedLists,
+          type: "selectedLeadsFromList",
+          position: { x: 0, y: 0 },
+          draggable: false,
+        },
+      ])
+    );
+  };
   function close() {
     setLeadsFromListModalOpen(false);
   }
@@ -87,7 +103,10 @@ export default function LeadsfromListModal({
                     {selectedLists.length > 0 && (
                       <div className="flex items-center justify-end">
                         <button
-                          onClick={() => setLeadsFromListModalOpen(false)}
+                          onClick={() => {
+                            onProviderClick(selectedLists);
+                            setLeadsFromListModalOpen(false);
+                          }}
                           className="p-1 w-24 text-md border-4 border-sky-400 rounded-md text-white bg-blue-600"
                         >
                           Insert
@@ -104,3 +123,17 @@ export default function LeadsfromListModal({
     </>
   );
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+

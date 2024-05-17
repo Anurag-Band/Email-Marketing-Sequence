@@ -9,10 +9,31 @@ import { useState } from "react";
 import { MdClose } from "react-icons/md";
 
 import Select from "react-select";
+import { useReactFlow } from "reactflow";
 
 export default function WaitModal({ isWaitModalOpen, setWaitModalOpen }) {
   const [waitFor, setWaitFor] = useState(1);
   const [selectedWaitType, setSelectedWaitType] = useState([]);
+
+  const reactFlow = useReactFlow();
+
+  console.log(reactFlow);
+  const onProviderClick = ({ waitFor, selectedWaitType }) => {
+    reactFlow.setNodes((prevNodes) =>
+      prevNodes.concat([
+        {
+          id: (prevNodes.length + 1).toString(),
+          data: {
+            waitFor,
+            selectedWaitType,
+          },
+          type: "selectedWait",
+          position: { x: 0, y: 350 },
+          draggable: false,
+        },
+      ])
+    );
+  };
   function close() {
     setWaitModalOpen(false);
   }
@@ -97,7 +118,11 @@ export default function WaitModal({ isWaitModalOpen, setWaitModalOpen }) {
                     </div>
                     <div className="flex items-center justify-end">
                       <button
-                        onClick={() => setWaitModalOpen(false)}
+                        onClick={() => {
+                          onProviderClick({ waitFor, selectedWaitType });
+
+                          setWaitModalOpen(false);
+                        }}
                         className="p-1 w-24 text-md border-4 border-sky-400 rounded-md text-white bg-blue-600"
                       >
                         Insert
@@ -113,3 +138,11 @@ export default function WaitModal({ isWaitModalOpen, setWaitModalOpen }) {
     </>
   );
 }
+
+
+
+
+
+
+
+
